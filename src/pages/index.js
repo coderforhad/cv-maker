@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Box, Unstable_Grid2 as Grid } from "@mui/material";
 import { Layout as DashboardLayout } from "src/layouts/dashboard/layout";
 import TabBar from "../components/TabBar";
-import BasicInfo from "../components/BasicInfo";
 
 const Page = () => (
   <>

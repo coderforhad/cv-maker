@@ -11,6 +11,7 @@ import TopSkills from "./TopSkills";
 import Experience from "./Experience";
 import Achievements from "./Achievements";
 import Contact from "./Contact";
+import { Grid } from "@mui/material";
 
 const tabs = [
   {
@@ -41,6 +42,7 @@ const tabs = [
 
 export default function TabBar() {
   const [value, setValue] = React.useState("basicInfo");
+  const [forms, setForms] = React.useState([])
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
@@ -52,8 +54,14 @@ export default function TabBar() {
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider", display: "flex", gap: "30px" }}>
             {tabs?.map((tab) => (
-              <TabList key={tab?.key} onChange={handleChange} aria-label="lab API tabs example">
-                <Tab label={tab?.label} value={tab?.key} />
+              <TabList key={tab?.key} 
+                onChange={handleChange} 
+                aria-label="lab API tabs example"
+              >
+                <Tab 
+                  label = {tab?.label} 
+                  value = {tab?.key} 
+                />
               </TabList>
             ))}
           </Box>
@@ -67,7 +75,11 @@ export default function TabBar() {
             <TopSkills />
           </TabPanel>
           <TabPanel value="proExperience">
-            <Experience />
+            {forms?.map((item, i)=> 
+              <Grid key={i}>
+                <Experience index={i}/>
+              </Grid>
+            )}
           </TabPanel>
           <TabPanel value="achievements">
             <Achievements />
