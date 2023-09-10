@@ -75,11 +75,7 @@ export default function TabBar() {
             <TopSkills />
           </TabPanel>
           <TabPanel value="proExperience">
-            {forms?.map((item, i)=> 
-              <Grid key={i}>
-                <Experience index={i}/>
-              </Grid>
-            )}
+            <Experience />
           </TabPanel>
           <TabPanel value="achievements">
             <Achievements />

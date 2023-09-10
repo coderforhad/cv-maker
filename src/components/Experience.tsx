@@ -3,14 +3,14 @@ import AutocompleteField from "./elements/AutocompleteField";
 import InputField from "./elements/InputField";
 import DateSelection from "./elements/DateSelection";
 
-const Experience = ({index}) => {
+const Experience = () => {
   return (
     <>
       <InputField 
         label= "Company Name" 
         name="companyName"
       />
-      <Grid sx={{display: "flex", gap:"10px"}}>
+      <Grid sx={{display: "flex", gap:"10px", justifyContent:"space-between"}}>
         <DateSelection 
           label="Starts" 
           dateName= "startsExp"

@@ -7,8 +7,14 @@ const BasicInfo = () => {
   return (
     <Box>
       <UploadFile /> 
-      <InputField label="full name" name="fName"/> 
-      <InputField label="Designation" name="designation"/>
+      <InputField 
+        label="full name" 
+        name="fName"
+      /> 
+      <InputField 
+        label="Designation" 
+        name="designation"
+      />
       <TextArea discriptions="objective"/>
     </Box>
   );

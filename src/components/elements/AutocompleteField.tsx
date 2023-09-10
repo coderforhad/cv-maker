@@ -1,47 +1,53 @@
 import React, { useState } from "react";
+import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import Chip from "@mui/material/Chip";
-import AddIcon from "@mui/icons-material/Add";
+import { Grid } from "@mui/material";
 
 function AutocompleteField({label}) {
   const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const options = ["Tag1", "Tag2", "Tag3", "Tag4"];
 
-  const handleAddTag = () => {
-    if (inputValue.trim() !== "" && !tags.includes(inputValue)) {
-      setTags([...tags, inputValue]);
-      setInputValue("");
-    }
+  const handleInputChange = (_event: any, newInputValue: React.SetStateAction<string>) => {
+    setInputValue(newInputValue);
   };
 
-  const handleDeleteTag = (tagToDelete) => () => {
-    const updatedTags = tags.filter((tag) => tag !== tagToDelete);
-    setTags(updatedTags);
+  const handleDeleteTag = (tagToDelete: any) => {
+    const newTags = tags.filter((tag) => tag !== tagToDelete);
+    setTags(newTags);
   };
 
   return (
-    <div>
-      <div>
-        {tags.map((tag, index) => (
-          <Chip key={index} label={tag} onDelete={handleDeleteTag(tag)} style={{ margin: "4px" }} />
-        ))}
-      </div>
-      <TextField
-        label={label}
-        variant="filled"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onKeyPress={(e) => {
-          if (e.key === "Enter") {
-            handleAddTag();
-          }
-        }}
-        InputProps={{
-          endAdornment: <AddIcon onClick={handleAddTag} style={{ cursor: "pointer" }} />,
-        }}
-        fullWidth
+    <Grid sx={{ width: "700px" }}>
+      <Autocomplete
+        multiple
+        id="tag-input"
+        options={options}
+        value={tags}
+        onChange={(_, newValue) => setTags(newValue)}
+        inputValue={inputValue}
+        onInputChange={handleInputChange}
+        freeSolo
+        renderTags={(value, getTagProps) =>
+          value.map((tag, index) => (
+            <Chip 
+              key={index} 
+              label={tag}
+              onDelete={() => handleDeleteTag(tag)} 
+            />
+          ))
+        }
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            variant="filled"
+            label= {label}
+            placeholder="Type and press Enter to add tags"
+          />
+        )}
       />
-    </div>
+    </Grid>
   );
 }
 

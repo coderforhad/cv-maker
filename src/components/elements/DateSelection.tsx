@@ -12,7 +12,7 @@ export default function YearSelection({label, dateName}) {
           label={label}
           openTo="year"
           views={['year', 'month', 'day']}
-          sx={{margin:"10px 0px"}}
+          sx={{margin:"10px 0px", width:"300px"}}
           onChange={(date)=> methods.setValue(`${dateName}`, date)}
         />
     </LocalizationProvider>

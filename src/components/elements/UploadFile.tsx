@@ -3,12 +3,10 @@ import { UploadButton } from "react-uploader";
 import { Button } from "@mui/material";
 import { useFormContext } from "react-hook-form";
 
-// Initialize once (at the start of your app).
 const uploader = Uploader({
-  apiKey: "free", // Get production API keys from Bytescale
+  apiKey: "free",
 });
 
-// Configuration options: https://www.bytescale.com/docs/upload-widget/frameworks/react#customize
 const options = { multi: false };
 
 const UploadFile = () => {
@@ -22,7 +20,11 @@ const UploadFile = () => {
       }}
     >
       {({ onClick }) => (
-        <Button variant="contained" sx={{ borderRadius: "0px", width: "100%" }} onClick={onClick}>
+        <Button 
+          variant="contained" 
+          sx={{ borderRadius: "0px", width: "100%" }} 
+          onClick={onClick}
+        >
           Upload Your Photo
         </Button>
       )}
