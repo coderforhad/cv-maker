@@ -5,10 +5,10 @@ const TopSkills = () => {
   return (
     <>
       <Grid>
-        <AutocompleteField label="Hard Skills" />
+        <AutocompleteField label="Hard Skills" tagName={"hardSkills"} />
       </Grid>
       <Grid sx={{margin:"10px 0px"}}>
-        <AutocompleteField label="Soft Skills" />
+        <AutocompleteField label="Soft Skills" tagName={"softSkills"} />
       </Grid>
     </>
   );

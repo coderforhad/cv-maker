@@ -6,7 +6,6 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import BasicInfo from "./BasicInfo";
 import Educations from "./Educations";
-import { useForm, FormProvider } from "react-hook-form"
 import TopSkills from "./TopSkills";
 import Experience from "./Experience";
 import Achievements from "./Achievements";
@@ -46,10 +45,7 @@ export default function TabBar() {
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
-  const methods = useForm()
-  console.log("Form Data", methods.watch())
   return (
-    <FormProvider {...methods}>
       <Box sx={{ width: "100%", typography: "body1" }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider", display: "flex", gap: "30px" }}>
@@ -85,6 +81,5 @@ export default function TabBar() {
           </TabPanel>
         </TabContext>
       </Box>
-    </FormProvider>
   );
 }

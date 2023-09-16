@@ -21,7 +21,24 @@ const Experience = () => {
         />
       </Grid>
       <Grid sx={{ margin: "10px 0px" }}>
-        <AutocompleteField label="Key Responsibilites" />
+        <AutocompleteField label="Key Responsibilites" tagName= "resposibilityOne" />
+      </Grid>
+      <InputField 
+        label= "Company Name" 
+        name="companyNameTwo"
+      />
+      <Grid sx={{display: "flex", gap:"10px", justifyContent:"space-between"}}>
+        <DateSelection 
+          label="Starts" 
+          dateName= "startsExpTwo"
+        />
+        <DateSelection 
+          label="Ends" 
+          dateName= "endExpTwo"
+        />
+      </Grid>
+      <Grid sx={{ margin: "10px 0px" }}>
+        <AutocompleteField label="Key Responsibilites" tagName= "resposibilityTwo" />
       </Grid>
     </>
   );
