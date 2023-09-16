@@ -3,14 +3,11 @@ import { useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { styled } from "@mui/material/styles";
 // import { withAuthGuard } from "src/hocs/with-auth-guard";
-import { SideNav } from "./side-nav";
-import { TopNav } from "./top-nav";
-import { Box, useMediaQuery } from "@mui/material";
+import { useMediaQuery } from "@mui/material";
 import Header from "./Header";
 import { LayoutMainBox, LayoutSubBox } from "./LayoutStyles";
-import Footer from "./Footer";
 
-const LayoutRoot = styled("div")(({ theme }) => ({
+const LayoutRoot = styled("div")(({ }) => ({
   flex: "1 1 auto",
   maxWidth: "100%",
 }));
