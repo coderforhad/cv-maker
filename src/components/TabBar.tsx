@@ -10,7 +10,6 @@ import TopSkills from "./TopSkills";
 import Experience from "./Experience";
 import Achievements from "./Achievements";
 import Contact from "./Contact";
-import { Grid } from "@mui/material";
 
 const tabs = [
   {

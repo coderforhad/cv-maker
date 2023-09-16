@@ -4,8 +4,7 @@ import { useFormContext } from "react-hook-form";
 
 export default function TempleteOne() {
   const methods = useFormContext();
-  console.log("form templete", methods.watch());
-
+  
   return (
     <Box
       sx={{
@@ -13,7 +12,7 @@ export default function TempleteOne() {
         justifyContent: " space-between",
         background: "#EBEBEB",
         border: "2px solid gray",
-        width: "700px",
+        width: "660px",
       }}
     >
       <Grid
@@ -47,7 +46,7 @@ export default function TempleteOne() {
         </Typography>
         <Grid sx={{ color: "#FFFAEF", fontSize: "12px" }}>
           <ul>
-            <li>
+            <li style={{margin:"10px 0px"}}>
               {methods.watch("university")
                 ? methods.watch("university")
                 : "Borcelle Business School"}
@@ -58,7 +57,7 @@ export default function TempleteOne() {
                 ? `Completed in ${methods.watch("universityEnd").$y}`
                 : "Completed in 2016"}
             </li>
-            <li>
+            <li style={{margin:"10px 0px"}}>
               {methods.watch("college") ? methods.watch("college") : "Borcelle Business School"}
               <br />
               {methods.watch("collegeSubject")
@@ -69,7 +68,7 @@ export default function TempleteOne() {
                 ? `Completed in ${methods.watch("collegeEnd").$y}`
                 : "Completed in 2016"}
             </li>
-            <li>
+            <li style={{margin:"10px 0px"}}>
               {methods.watch("school") ? methods.watch("school") : "Borcelle Business School"}
               <br />
               {methods.watch("schoolSubject")
@@ -95,12 +94,11 @@ export default function TempleteOne() {
         >
           contact
         </Typography>
-        <Grid sx={{ color: "#FFFAEF", fontSize: "12px" }}>
+        <Grid sx={{ color: "#FFFAEF", fontSize: "12px", margin:"20px"}}>
           <Typography sx={{ fontSize: "12px", padding: "0px 10px" }}>
-            M: {methods.watch("email") ? methods.watch("email") : `hello@reallygreatsite.com`}{" "}
-            <br />
-            P: {methods.watch("phone") ? methods.watch("phone") : `+123-456-7890`} <br />
-            A: {methods.watch("address") ? methods.watch("address") : `123 Anywhere St., Any City`}
+            Email: {methods.watch("email") ? methods.watch("email") : `hello@reallygreatsite.com`}<br />
+            Phone: {methods.watch("phone") ? methods.watch("phone") : `+123-456-7890`} <br />
+            Address: {methods.watch("address") ? methods.watch("address") : `123 Anywhere St., Any City`}
           </Typography>
         </Grid>
         <Typography
@@ -118,7 +116,7 @@ export default function TempleteOne() {
         </Typography>
         <Grid sx={{ color: "#FFFAEF", fontSize: "12px" }}>
           <ul>
-            <li>
+            <li style={{margin:"10px 0px"}}>
               {methods.watch("startDateAchievementOne") && methods.watch("endDateAchievementOne")
                 ? methods.watch("startDateAchievementOne").$y +
                   "-" +
@@ -129,7 +127,7 @@ export default function TempleteOne() {
                 ? methods.watch("keyAchievementOne")
                 : `Reduced the production cost by 20% in the second year of internship`}
             </li>
-            <li>
+            <li style={{margin:"10px 0px"}}>
               {methods.watch("startDateAchievementTwo") && methods.watch("endDateAchievementTwo")
                 ? methods.watch("startDateAchievementTwo").$y +
                   "-" +
@@ -242,15 +240,15 @@ export default function TempleteOne() {
             textAlign: "center",
           }}
         >
-          top skills
+          Top skills
         </Typography>
-        <Grid sx={{ display: "flex" }}>
+        <Grid sx={{ display: "flex", justifyContent:"space-around"}}>
           <Grid>
-            <Typography sx={{ margin: "10px 0px -10px 20px" }}>Hard Skills</Typography>
+            <Typography sx={{ margin: "10px 0px 0px 20px" }}>Hard Skills</Typography>
             {methods.watch("hardSkills") ? (
               methods.watch("hardSkills")?.map((skills, i) => (
-                <ul key={i}>
-                  <li style={{ fontSize: "12px" }}>{skills}</li>
+                <ul style={{margin:"2px"}} key={i}>
+                  <li style={{ fontSize: "12px"}}>{skills}</li>
                 </ul>
               ))
             ) : (
@@ -264,10 +262,10 @@ export default function TempleteOne() {
             )}
           </Grid>
           <Grid>
-            <Typography sx={{ margin: "10px 0px -10px 20px" }}>Soft Skills</Typography>
+            <Typography sx={{ margin: "10px 0px 0px 20px" }}>Soft Skills</Typography>
             {methods.watch("softSkills") ? (
               methods.watch("softSkills")?.map((skills, i) => (
-                <ul key={i}>
+                <ul style={{margin:"2px"}} key={i}>
                   <li style={{ fontSize: "12px" }}>{skills}</li>
                 </ul>
               ))

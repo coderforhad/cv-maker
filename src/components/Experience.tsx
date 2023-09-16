@@ -21,7 +21,11 @@ const Experience = () => {
         />
       </Grid>
       <Grid sx={{ margin: "10px 0px" }}>
-        <AutocompleteField label="Key Responsibilites" tagName= "resposibilityOne" />
+        <AutocompleteField 
+          label="Key Responsibilites" 
+          tagName= "resposibilityOne" 
+          placeholder="Type and press Enter to add Responsibilites"
+        />
       </Grid>
       <InputField 
         label= "Company Name" 
@@ -38,7 +42,11 @@ const Experience = () => {
         />
       </Grid>
       <Grid sx={{ margin: "10px 0px" }}>
-        <AutocompleteField label="Key Responsibilites" tagName= "resposibilityTwo" />
+        <AutocompleteField 
+          label="Key Responsibilites" 
+          tagName= "resposibilityTwo"  
+          placeholder="Type and press Enter to add Responsibilites"
+        />
       </Grid>
     </>
   );

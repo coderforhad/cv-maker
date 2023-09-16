@@ -5,10 +5,10 @@ import Chip from "@mui/material/Chip";
 import { Grid } from "@mui/material";
 import { useFormContext } from "react-hook-form";
 
-function AutocompleteField({label,tagName}) {
+function AutocompleteField({label,tagName, placeholder}) {
   const methods = useFormContext()
   const [inputValue, setInputValue] = useState("");
-  const options = ["Tag1", "Tag2", "Tag3", "Tag4"];
+  const options = [];
 
   const handleInputChange = (_event: any, newInputValue: React.SetStateAction<string>) => {
     setInputValue(newInputValue);
@@ -44,7 +44,7 @@ function AutocompleteField({label,tagName}) {
             {...params}
             variant="filled"
             label= {label}
-            placeholder="Type and press Enter to add tags"
+            placeholder={placeholder}
           />
         )}
       />
