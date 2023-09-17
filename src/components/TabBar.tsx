@@ -10,6 +10,7 @@ import TopSkills from "./TopSkills";
 import Experience from "./Experience";
 import Achievements from "./Achievements";
 import Contact from "./Contact";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 const tabs = [
   {
@@ -40,12 +41,13 @@ const tabs = [
 
 export default function TabBar() {
   const [value, setValue] = React.useState("basicInfo");
-  const [forms, setForms] = React.useState([])
+  const theme = useTheme();
+  const lg = useMediaQuery(theme.breakpoints.up("xl"));
   const handleChange = (event: React.SyntheticEvent, newValue: string) => {
     setValue(newValue);
   };
   return (
-      <Box sx={{ width: "100%", typography: "body1" }}>
+      <Box sx={{ width: lg ? "50%" : "420px", typography: "body1" }}>
         <TabContext value={value}>
           <Box sx={{ borderBottom: 1, borderColor: "divider", display: "flex", gap: "30px" }}>
             {tabs?.map((tab) => (

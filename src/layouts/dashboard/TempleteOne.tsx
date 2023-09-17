@@ -1,23 +1,25 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
 export default function TempleteOne() {
   const methods = useFormContext();
+  const theme = useTheme();
+  const lg = useMediaQuery(theme.breakpoints.up("xl"));
   
   return (
     <Box
       sx={{
         display: "flex",
         justifyContent: " space-between",
-        background: "#EBEBEB",
+        background:(theme)=> theme.palette.mode === "dark" ? "#636363" : "#EBEBEB",
         border: "2px solid gray",
-        width: "660px",
+        width: lg ? "660px" : "660px",
       }}
     >
       <Grid
         sx={{
-          width: "200px",
+          width: lg ? "200px" : "100%",
           backgroundColor: "#162232",
           borderRadius: "100px 100px 0px 0px",
           margin: "20px 0px 0px 20px",

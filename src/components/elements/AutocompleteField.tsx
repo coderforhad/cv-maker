@@ -20,7 +20,7 @@ function AutocompleteField({label,tagName, placeholder}) {
   };
 
   return (
-    <Grid sx={{ width: "700px" }}>
+    <Grid sx={{ width: "100%" }}>
       <Autocomplete
         multiple
         id="tag-input"
